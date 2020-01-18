@@ -40,6 +40,7 @@ For the model ‘human-pose-estimation-0001’ https://docs.openvinotoolkit.org/
 
 > ‘human-pose-estimation-0001.xml’ showed the input dimensions on top of its reference webpage, and the ‘Mconv7_stage2_L2’ output dimensions at bottom of that page. Both have the same format [BxCxHxW]  
 
-It shows as below picture.
+> It shows as below picture.  
+> [Input and Output Size Processing](img_process.gif)
 
 
