@@ -82,4 +82,23 @@ When a client wants to send data to a broker, it is called a publish. When the o
 * The broker will buffer messages and push them out to the subscriber when it is back online on the condition that a connection from a subscribing client to a broker is broken.
 * The broker can close the connection and send subscribers a cached message with instructions from the publisher if the connection from the publishing client to the broker is disconnected without notice.  
 
+## MQTT workflow
+An MQTT session is divided into 4 stages:  
+1. connection  
+A client starts by creating a TCP/IP connection to the broker by using either a standard port(1883 for nonencrypted communication) or a custom port defined by the broker's operators. When creating the connection, it is important to recognize that the server might continue an old session if it is provided with a reused client identity.
+2. authentication  
+port 8883 is used for encrypted communication. Using SSL/TLS handshakes, the client validates the server certificate and authenticates the server. The client may also provide a client certificate to the broker during the handshake. The broker can use this to authenticate the client. While not specifically part of the MQTT specification, it has become customary for brokers to support client authentication with SSL/TLS client-side certificates.  
+
+Because the MQTT protocol aims to be a protocol for resource-constrained and IoT devices, SSL/TLS might not always be an option and, in some cases, might not be desired. On such occasions, authentication is presented as a cleartext username and password, which are sent by the client to the server -- this, as part of the CONNECT/CONNACK packet sequence. In addition, some brokers, especially open brokers published on the internet, will accept anonymous clients. In such cases, the username and password are simply left blank.
+3. communication  
+Because the MQTT protocol aims to be a protocol for resource-constrained and IoT devices, SSL/TLS might not always be an option and, in some cases, might not be desired. On such occasions, authentication is presented as a cleartext username and password, which are sent by the client to the server -- this, as part of the CONNECT/CONNACK packet sequence. In addition, some brokers, especially open brokers published on the internet, will accept anonymous clients. In such cases, the username and password are simply left blank.
+4. termination. 
+
+
+
+
+
+
+
+
 
