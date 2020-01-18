@@ -70,7 +70,10 @@ Supported frameworks by OpenVINO Toolkit
 To use IENetwork, you need to load arguments named model and weights to initialize - the XML and Binary files that make up the model’s Intermediate Representation.  
 4. Flask is A Python framework useful for web development and another potential option for video streaming to a web browser. https://www.fullstackpython.com/flask.html  
 5. OpenCV is an open-source library for various image processing and computer vision techniques that runs on a highly optimized C++ back-end, available for use with Python and Java as well  
-6. MQTT is a lightweight pub/sub architecture communication for resource constrined devices, communication etc. ROS also has this pub/sub service.
+6. MQTT is a lightweight pub/sub architecture communication for resource constrined devices, communication etc. ROS also has this pub/sub service.  
+> https://software.intel.com/en-us/SetupGateway-MQTT Python library for working with MQTT called paho-mqtt 
+> https://pypi.org/project/paho-mqtt/ sub-library client, which is how you create an MQTT client that can publish or subscribe to the broker  
+
 7. we can use  FFmpeg library to transform video to server if necessary
 8. Node.js can be used for user front interface to show MQTT or FFmpeg data
 
