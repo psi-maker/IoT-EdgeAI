@@ -16,7 +16,8 @@ This document introduces the development, coding tools, coding libraries for Int
 *	MobileNet
 *	ResNet
 *	Inception
-
+  
+![OpenVINO Workflow](openvino-workflow.png)
 # Deep learning models
 1. We need DL models to fetch into OpenVINO inference engine. Using a tool, such as Caffe, to create and train a CNN inference model or directly use the pretrained models from below link.  
 https://software.intel.com/en-us/openvino-toolkit/documentation/pretrained-models  
