@@ -124,57 +124,42 @@ The broker may send subscribers a message from the publisher that the broker has
 * Mosquitto is an open source MQTT broker
 
 ## Pros and cons of MQTT
-MQTT has a few distinct advantages and disadvantages when compared to competing protocols. Advantages include the following:
+**Advantages** 
+* efficient data transmission and quick to implement due to its being a lightweight protocol;  
+* low network usage, due to minimized data packets;  
+* efficient distribution of data;  
+* successful implementation of remote sensing and control;  
+* fast and efficient message delivery;  
+* usage of small amounts of power, which is good for the connected devices;  
+* reduction of network bandwidth  
 
-efficient data transmission and quick to implement due to its being a lightweight protocol;
-low network usage, due to minimized data packets;
-efficient distribution of data;
-successful implementation of remote sensing and control;
-fast and efficient message delivery;
-usage of small amounts of power, which is good for the connected devices; and
-reduction of network bandwidth
-Potential downsides to MQTT include the following:
+**Disadvantages**  
+* MQTT has slower transmit cycles compared to CoAP.  
+* MQTT's resource discovery works on flexible topic subscription, whereas CoAP uses a stable resource discovery system.  
+* Security and authentication: MQTT is unencrypted. Instead, it uses TLS/SSL for security encryption. MQTT has minimal authentication features built into the protocol. Usernames and passwords are sent in cleartext, and any form of secure use of MQTT must employ SSL/TLS, which, unfortunately, is not a lightweight protocol.  
+Authenticating clients with client-side certificates is not a simple process, and there's no way in MQTT to control who owns a topic and who can publish information on it, except using proprietary, out-of-band means. This makes it easy to inject harmful messages into the network, either willfully or by mistake.  
 
-MQTT has slower transmit cycles compared to CoAP.
-MQTT's resource discovery works on flexible topic subscription, whereas CoAP uses a stable resource discovery system.
-MQTT is unencrypted. Instead, it uses TLS/SSL for security encryption.
-It is difficult to create a globally scalable MQTT network.
-MQTT challenges: Security, interoperability and authentication
-Because the MQTT protocol was not designed with security in mind, the protocol has traditionally been used in secure back-end networks for application-specific purposes. MQTT's topic structure can easily form a huge tree, and there's no clear way to divide a tree into smaller logical domains that can be federated. This makes it difficult to create a globally scalable MQTT network because, as the size of the topic tree grows, the complexity increases.
+Furthermore, there's no way for the message receiver to know who sent the original message unless that information is contained in the actual message. Security features that have to be implemented on top of MQTT in a proprietary fashion increase the code footprint and make implementations more difficult.  
 
-Another negative aspect of MQTT is its lack of interoperability. Because message payloads are binary, with no information as to how they are encoded, problems can arise -- especially in open architectures where different applications from different manufacturers are supposed to work seamlessly with each other.
+* difficult to create a globally scalable MQTT network. Because the MQTT protocol was not designed with security in mind, the protocol has traditionally been used in secure back-end networks for application-specific purposes. MQTT's topic structure can easily form a huge tree, and there's no clear way to divide a tree into smaller logical domains that can be federated. This makes it difficult to create a globally scalable MQTT network because, as the size of the topic tree grows, the complexity increases.  
+* lack of interoperability. Because message payloads are binary, with no information as to how they are encoded, problems can arise -- especially in open architectures where different applications from different manufacturers are supposed to work seamlessly with each other.  
 
-As touched upon previously, MQTT has minimal authentication features built into the protocol. Usernames and passwords are sent in cleartext, and any form of secure use of MQTT must employ SSL/TLS, which, unfortunately, is not a lightweight protocol.
+## Quality of service levels
+QoS refers to an agreement between the sender of a message and the message's recipient. QoS will define the guarantee of delivery in referring to a specific message. QoS acts as a key feature in MQTT, giving the client the ability to choose between three levels of service.  
 
-Authenticating clients with client-side certificates is not a simple process, and there's no way in MQTT to control who owns a topic and who can publish information on it, except using proprietary, out-of-band means. This makes it easy to inject harmful messages into the network, either willfully or by mistake.
+The three different QoS levels determine how the content is managed by the MQTT protocol. Although higher levels of QoS are more reliable, they have more latency and bandwidth requirements, so subscribing clients can specify the highest QoS level they would like to receive.  
 
-Furthermore, there's no way for the message receiver to know who sent the original message unless that information is contained in the actual message. Security features that have to be implemented on top of MQTT in a proprietary fashion increase the code footprint and make implementations more difficult.
+1. The simplest QoS level is unacknowledged service. This QoS level uses a PUBLISH packet sequence; the publisher sends a message to the broker one time, and the broker passes the message to subscribers one time. There is no mechanism in place to make sure the message has been received correctly, and the broker does not save the message. This QoS level may also be referred to as at most once, QoS0 or fire and forget.  
 
-Quality of service levels
-QoS refers to an agreement between the sender of a message and the message's recipient. QoS will define the guarantee of delivery in referring to a specific message. QoS acts as a key feature in MQTT, giving the client the ability to choose between three levels of service.
+2. The second QoS level is acknowledged service. This QoS level uses a PUBLISH/PUBACK packet sequence between the publisher and its broker, as well as between the broker and subscribers. An acknowledgement packet verifies that content has been received, and a retry mechanism will send the original content again if an acknowledgement is not received in a timely manner. This may result in the subscriber receiving multiple copies of the same message. This QoS level may also be referred to as at least once or QoS1.  
 
-The three different QoS levels determine how the content is managed by the MQTT protocol. Although higher levels of QoS are more reliable, they have more latency and bandwidth requirements, so subscribing clients can specify the highest QoS level they would like to receive.
+3. The third QoS level is assured service. This QoS level delivers the message with two pairs of packets. The first pair is called PUBLISH/PUBREC, and the second pair is called PUBREL/PUBCOMP. The two pairs ensure that, regardless of the number of retries, the message will only be delivered once. This QoS level may also be referred to as exactly once or QoS2.
 
-The simplest QoS level is unacknowledged service. This QoS level uses a PUBLISH packet sequence; the publisher sends a message to the broker one time, and the broker passes the message to subscribers one time. There is no mechanism in place to make sure the message has been received correctly, and the broker does not save the message. This QoS level may also be referred to as at most once, QoS0 or fire and forget.
-
-The second QoS level is acknowledged service. This QoS level uses a PUBLISH/PUBACK packet sequence between the publisher and its broker, as well as between the broker and subscribers. An acknowledgement packet verifies that content has been received, and a retry mechanism will send the original content again if an acknowledgement is not received in a timely manner. This may result in the subscriber receiving multiple copies of the same message. This QoS level may also be referred to as at least once or QoS1.
-
-The third QoS level is assured service. This QoS level delivers the message with two pairs of packets. The first pair is called PUBLISH/PUBREC, and the second pair is called PUBREL/PUBCOMP. The two pairs ensure that, regardless of the number of retries, the message will only be delivered once. This QoS level may also be referred to as exactly once or QoS2.
-
-Specifications
-MQTT has different specifications depending on the specific version. Version 5.0 superseded the last version of MQTT, version 3.1.1. Some newer specifications, as defined by OASIS, include the following:
-
-the use of publish/subscribe message patterns;
-a mechanism that can notify users when abnormal disconnections occur;
-the three levels of message delivery: at most once, at least once and exactly once;
-the minimization of transport overhead and protocol exchanges to reduce network traffic; and
-an agnostic messaging transport referring to the content of the payload.
-Further specifications can be found at OASIS' website here.
-
-Updates of MQTT
-MQTT was officially approved as an OASIS standard on Oct. 28, 2015. At the end of January 2016, it was accepted as an International Organization for Standardization (ISO) standard. The protocol is continuously improving and now supports WebSockets, another protocol that enables two-way communication between clients and brokers in real time. Later, notable versions included the v3.1.1 standard and the v5.0 standard, both having been approved as OASIS standards. As an example of some of its updates, version 5.0 included better error reporting, including metadata in message headers, shared subscriptions, message and session expiries, and topic aliasing.
-
-
-
-
-
+## Specifications
+MQTT has different specifications depending on the specific version. Version 5.0 superseded the last version of MQTT, version 3.1.1. Some newer specifications, as defined by OASIS, include the following:  
+* the use of publish/subscribe message patterns;  
+* a mechanism that can notify users when abnormal disconnections occur;  
+* the three levels of message delivery: at most once, at least once and exactly once;  
+* the minimization of transport overhead and protocol exchanges to reduce network traffic;   
+* an agnostic messaging transport referring to the content of the payload.  
+etc.  
