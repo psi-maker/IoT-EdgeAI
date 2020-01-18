@@ -49,6 +49,8 @@ Some notes for pre-process input data by openCV2 coding is as following:
 *	The image is actually descripted as a matrix. For OpenCV of Python，image is the NumPy array, can be changed by .transpose and .reshape method/function 
 
 # Model optimizer
+https://docs.openvinotoolkit.org/latest/_docs_MO_DG_Deep_Learning_Model_Optimizer_DevGuide.html  
+
 If a model is not one of the pre-converted models in the Pre-Trained Models OpenVINO provides, we required the step of model optimizer to move onto the Inference Engine.  
 Assumes you have a network model trained using a supported deep learning framework.  
 Supported frameworks by OpenVINO Toolkit
