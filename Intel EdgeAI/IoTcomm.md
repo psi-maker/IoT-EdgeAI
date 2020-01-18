@@ -75,8 +75,9 @@ Example: 智能家居
 
 # MQ Telemetry Transport
 TT in MQTT stands for Telemetry Transport, the MQ is in reference to a product called IBM MQ. It is a good choice for wireless networks that experience varying levels of latency due to occasional bandwidth constraints or unreliable connections. MQTT has two objects:  
-* a client is the connected devices: the subscriber and the publisher.
+* a client is the connected devices: the subscriber or the publisher.
 * a broker is a server: a message hub.   
+
 When a client wants to send data to a broker, it is called a publish. When the operation is reversed, it is called a subscribe.  
 * The broker will buffer messages and push them out to the subscriber when it is back online on the condition that a connection from a subscribing client to a broker is broken.
 * The broker can close the connection and send subscribers a cached message with instructions from the publisher if the connection from the publishing client to the broker is disconnected without notice.  
