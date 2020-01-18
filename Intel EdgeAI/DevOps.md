@@ -17,4 +17,9 @@ This document introduces the development, coding tools, coding libraries for Int
 *	ResNet
 *	Inception
 
+# Deep learning models
+1. We need DL models to fetch into OpenVINO inference engine. Using a tool, such as Caffe, to create and train a CNN inference model or directly use the pretrained models from below link.  
+https://software.intel.com/en-us/openvino-toolkit/documentation/pretrained-models  
+https://github.com/opencv/open_model_zoo  
+2. In oder to fetch the model into IE, we need adjust or resize the input data per model’s requirement and what library you use to load an image or frame, the requirement can be checked from model reference webpage or from OpenVINO Toolkit documentation.
 
