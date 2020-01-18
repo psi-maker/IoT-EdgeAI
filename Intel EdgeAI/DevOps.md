@@ -28,7 +28,7 @@ https://github.com/opencv/open_model_zoo
 > Example of processing INPUT AND OUTPUT SHAPE  
 For the model ‘human-pose-estimation-0001’ https://docs.openvinotoolkit.org/latest/_models_intel_human_pose_estimation_0001_description_human_pose_estimation_0001.html, we can get the output are two blobs with shapes: [1, 38, 32, 57] and [1, 19, 32, 57]. The first blob contains keypoint pairwise relations (part affinity fields), the second one contains keypoint heatmaps. Then what is the exactly mean for every dimension data on [1, 38, 32, 57] and and [1, 19, 32, 57]?    
 
-The model 'human-pose-estimation-0001’ is 
+> The model 'human-pose-estimation-0001’ is 
 * a multi-person 2D pose estimation network (based on the OpenPose approach) https://arxiv.org/pdf/1611.08050.pdf 
 * with tuned MobileNet v1 as a feature extractor https://arxiv.org/pdf/1704.04861.pdf
 * The pose may contain up to 18 keypoints: ears, eyes, nose, neck, shoulders, elbows, wrists, hips, knees and ankles
