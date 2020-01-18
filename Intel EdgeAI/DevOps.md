@@ -42,12 +42,6 @@ For the model ‘human-pose-estimation-0001’ https://docs.openvinotoolkit.org/
 > It shows as below picture.  
 > ![Input and Output Size Processing](img_process.GIF)
 
-3. Coding library
-Some notes for pre-process input data by openCV2 coding is as following:
-* cv2.imread will load the image with BGR channel (matlab is RGB sequence) 
-*	cv2.resize  the image size to fit in model requirement 
-*	The image is actually descripted as a matrix. For OpenCV of Python，image is the NumPy array, can be changed by .transpose and .reshape method/function 
-
 # Model optimizer
 https://docs.openvinotoolkit.org/latest/_docs_MO_DG_Deep_Learning_Model_Optimizer_DevGuide.html  
 
@@ -59,3 +53,19 @@ Supported frameworks by OpenVINO Toolkit
 * https://mxnet.apache.org/  Apache Software
 * https://onnx.ai/  which can support PyTorch and Apple ML models through another conversion step. combined effort of Facebook and Microsoft
 * https://kaldi-asr.org/doc/dnn.html originally an individual’s effort, primarily focused on speech recognition data
+
+# Coding library examples
+1. Some notes for pre-process of model input data by openCV2:
+* cv2.imread will load the image with BGR channel (matlab is RGB sequence) 
+*	cv2.resize  the image size to fit in model requirement 
+*	The image is actually descripted as a matrix. For OpenCV of Python，image is the NumPy array, can be changed by .transpose and .reshape method/function   
+2. We use python command with special parameters for model optimization, please refer for detailed information against supported frameworks and the document of model optimizer
+3. To load an IR into the Inference Engine, we mostly work with two classes IECore and IENetwork in the openvino.inference_engine library (if using Python https://docs.openvinotoolkit.org/latest/ie_python_api.html):
+> IECore, which is the Python wrapper to work with the Inference Engine
+>> * In the IECore documentation, no arguments are needed to initialize.
+>> * query_network, which takes in an IENetwork as an argument and a device name, and returns a list of layers the Inference Engine supports. You can then iterate through the layers in the IENetwork you created, and check whether they are in the supported layers list. If a layer was not supported, a CPU extension may be able to help.
+>> * The device_name argument is just a string for which device is being used - ”CPU”, ”GPU”, ”FPGA”, or ”MYRIAD” (which applies for the Neural Compute Stick).
+> IENetwork, which is what will initially hold the network and get loaded into IECore
+To use IENetwork, you need to load arguments named model and weights to initialize - the XML and Binary files that make up the model’s Intermediate Representation.
+
+
