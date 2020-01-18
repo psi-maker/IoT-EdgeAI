@@ -64,7 +64,8 @@ Supported frameworks by OpenVINO Toolkit
 > IECore, which is the Python wrapper to work with the Inference Engine
 >> * In the IECore documentation, no arguments are needed to initialize.
 >> * query_network, which takes in an IENetwork as an argument and a device name, and returns a list of layers the Inference Engine supports. You can then iterate through the layers in the IENetwork you created, and check whether they are in the supported layers list. If a layer was not supported, a CPU extension may be able to help.
->> * The device_name argument is just a string for which device is being used - ”CPU”, ”GPU”, ”FPGA”, or ”MYRIAD” (which applies for the Neural Compute Stick).
+>> * The device_name argument is just a string for which device is being used - ”CPU”, ”GPU”, ”FPGA”, or ”MYRIAD” (which applies for the Neural Compute Stick).  
+
 > IENetwork, which is what will initially hold the network and get loaded into IECore
 To use IENetwork, you need to load arguments named model and weights to initialize - the XML and Binary files that make up the model’s Intermediate Representation.
 
