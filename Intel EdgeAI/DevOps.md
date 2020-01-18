@@ -67,6 +67,9 @@ Supported frameworks by OpenVINO Toolkit
 >> * The device_name argument is just a string for which device is being used - ”CPU”, ”GPU”, ”FPGA”, or ”MYRIAD” (which applies for the Neural Compute Stick).  
 
 > IENetwork, which is what will initially hold the network and get loaded into IECore
-To use IENetwork, you need to load arguments named model and weights to initialize - the XML and Binary files that make up the model’s Intermediate Representation.
+To use IENetwork, you need to load arguments named model and weights to initialize - the XML and Binary files that make up the model’s Intermediate Representation.  
+> Flask is A Python framework useful for web development and another potential option for video streaming to a web browser. https://www.fullstackpython.com/flask.html  
+> OpenCV is an open-source library for various image processing and computer vision techniques that runs on a highly optimized C++ back-end, available for use with Python and Java as well  
+
 
 
