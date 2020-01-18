@@ -47,3 +47,5 @@ Some notes for pre-process input data by openCV2 coding is as following:
 * cv2.imread will load the image with BGR channel (matlab is RGB sequence) 
 *	cv2.resize  the image size to fit in model requirement 
 *	The image is actually descripted as a matrix. For OpenCV of Python，image is the NumPy array, can be changed by .transpose and .reshape method/function 
+
+# Model optimizer
