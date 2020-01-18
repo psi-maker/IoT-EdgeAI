@@ -19,6 +19,13 @@ Modles->Optimizer->IR->Inference Engine-> Extracting Results ->Edge deployment
 *	ResNet
 *	Inception
   
+# Supported frameworks by OpenVINO Toolkit
+* https://caffe.berkeleyvision.org/ UC Berkeley
+* https://www.tensorflow.org/ Google Brain
+* https://mxnet.apache.org/  Apache Software
+* https://onnx.ai/  which can support PyTorch and Apple ML models through another conversion step. combined effort of Facebook and Microsoft
+* https://kaldi-asr.org/doc/dnn.html originally an individual’s effort, primarily focused on speech recognition data
+
 # Deep learning models
 1. We need DL models to fetch into OpenVINO inference engine. Using a tool, such as Caffe, to create and train a CNN inference model or directly use the pretrained models from below link.  
 https://software.intel.com/en-us/openvino-toolkit/documentation/pretrained-models  
