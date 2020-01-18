@@ -74,6 +74,8 @@ Example: 智能家居
 * 最后用户想把自家的能耗查询服务公布到互联网上，那么可以使用REST/HTTP来开放API服务。 松耦合应用
 
 # MQ Telemetry Transport
+MQTT was previously known as the SCADA protocol, MQ Integrator SCADA Device Protocol (MQIsdp) and WebSphere MQTT (WMQTT), although all these variations have fallen out of use.  
+
 TT in MQTT stands for Telemetry Transport, the MQ is in reference to a product called IBM MQ. It is a good choice for wireless networks that experience varying levels of latency due to occasional bandwidth constraints or unreliable connections. MQTT has two objects:  
 * a client is the connected devices: the subscriber or the publisher.
 * a broker is a server: a message hub.   
@@ -108,7 +110,13 @@ Another operation a client can perform during the communication phase is to ping
 4. **termination**  
 When a publisher or subscriber wants to terminate an MQTT session, it sends a DISCONNECT message to the broker and then closes the connection. This is called a graceful shutdown because it gives the client the ability to easily reconnect by providing its client identity and resuming where it left off.  
 
-The broker may send subscribers a message from the publisher that the broker has previously cached if the disconnect happen suddenly without time for a publisher to send a DISCONNECT message. The message, which is called a last will and testament, provides subscribers with instructions for what to do if the publisher dies unexpectedly.
+The broker may send subscribers a message from the publisher that the broker has previously cached if the disconnect happen suddenly without time for a publisher to send a DISCONNECT message. The message, which is called a last will and testament, provides subscribers with instructions for what to do if the publisher dies unexpectedly.  
+
+## Examples to use MQTT
+* Facebook uses MQTT for its Messenger app, not only because the protocol conserves battery power during mobile phone-to-phone messaging, but also because the protocol enables messages to be delivered efficiently in milliseconds (ms), despite inconsistent internet connections across the globe.  
+* Most major cloud services providers, including Amazon Web Services (AWS), Google Cloud, IBM Cloud and Microsoft Azure, support MQTT.  
+* the Carriots, Evrything and ThingWorx IoT platforms support the MQTT protocol.  
+
 
 
 
