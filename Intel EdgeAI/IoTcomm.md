@@ -73,4 +73,5 @@ Example: 智能家居
 * 家里的所有电器的电量消耗，可以使用AMQP协议，传输到云端或家庭网关中进行分析；数据查看和交换
 * 最后用户想把自家的能耗查询服务公布到互联网上，那么可以使用REST/HTTP来开放API服务。 松耦合应用
 
-# MQTT MQ Telemetry Transport
+# MQ Telemetry Transport
+
