@@ -8,7 +8,9 @@ This document introduces the development, coding tools, coding libraries for Int
 >>> Toolkit: https://github.com/opencv/dldt Designed to accelerate the development of applications and solutions that emulate human vision. Based on (CNN), the toolkit extends workloads across Intel hardware (including accelerators) and maximizes performance.
 
 > **Cloud coding** No hardware setup required on your end. The DevCloud utilizes Jupyter* Notebooks to execute code directly within the Web browser. https://devcloud.intel.com/edge/home  
-
+  
+![OpenVINO Workflow](openvino-workflow.gif)  
+Modles->Optimizer->IR->Inference Engine-> Extracting Results ->Edge deployment    
 # Deep learning networks
 *	SSD
 *	YOLO
@@ -17,9 +19,6 @@ This document introduces the development, coding tools, coding libraries for Int
 *	ResNet
 *	Inception
   
-![OpenVINO Workflow](openvino-workflow.gif)  
-Modles->Optimizer->IR->Inference Engine-> Extracting Results ->Edge deployment  
-
 # Deep learning models
 1. We need DL models to fetch into OpenVINO inference engine. Using a tool, such as Caffe, to create and train a CNN inference model or directly use the pretrained models from below link.  
 https://software.intel.com/en-us/openvino-toolkit/documentation/pretrained-models  
