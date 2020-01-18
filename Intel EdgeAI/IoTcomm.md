@@ -99,16 +99,16 @@ MQTT is a lightweight protocol because all its messages have a small code footpr
 
 During the communication phase, a client can perform publish, subscribe, unsubscribe and ping operations. The publish operation sends a binary block of data -- the content -- to a topic that is defined by the publisher.  
 
-4. **termination** 
-MQTT supports message binary large objects (BLOBs) up to 256 MB in size. The format of the content will be application-specific. Topic subscriptions are made using a SUBSCRIBE/SUBACK packet pair, and unsubscribing is similarly performed using an UNSUBSCRIBE/UNSUBACK packet pair.
+MQTT supports message binary large objects (BLOBs) up to 256 MB in size. The format of the content will be application-specific. Topic subscriptions are made using a SUBSCRIBE/SUBACK packet pair, and unsubscribing is similarly performed using an UNSUBSCRIBE/UNSUBACK packet pair.  
 
-Topic strings form a natural topic tree with the use of a special delimiter character, the forward slash (/). A client can subscribe to -- and unsubscribe from -- entire branches in the topic tree with the use of special wild-card characters. There are two wild-card characters: a single-level wild-card character, the plus character (+); and a multilevel wild-card character, the hash character (#). A special topic character, the dollar character ($), excludes a topic from any root wild-card subscriptions. Typically, $ is used to transport server-specific or system messages.
+Topic strings form a natural topic tree with the use of a special delimiter character, the forward slash (/). A client can subscribe to -- and unsubscribe from -- entire branches in the topic tree with the use of special wild-card characters. There are two wild-card characters: a single-level wild-card character, the plus character (+); and a multilevel wild-card character, the hash character (#). A special topic character, the dollar character ($), excludes a topic from any root wild-card subscriptions. Typically, $ is used to transport server-specific or system messages.  
 
-Another operation a client can perform during the communication phase is to ping the broker server using a PINGREQ/PINGRESP packet sequence. This packet sequence roughly translates to ARE YOU ALIVE/YES I AM ALIVE. This operation has no other function than to maintain a live connection and ensure the TCP connection has not been shut down by a gateway or router.
+Another operation a client can perform during the communication phase is to ping the broker server using a PINGREQ/PINGRESP packet sequence. This packet sequence roughly translates to ARE YOU ALIVE/YES I AM ALIVE. This operation has no other function than to maintain a live connection and ensure the TCP connection has not been shut down by a gateway or router.  
 
-When a publisher or subscriber wants to terminate an MQTT session, it sends a DISCONNECT message to the broker and then closes the connection. This is called a graceful shutdown because it gives the client the ability to easily reconnect by providing its client identity and resuming where it left off.
+4. **termination**  
+When a publisher or subscriber wants to terminate an MQTT session, it sends a DISCONNECT message to the broker and then closes the connection. This is called a graceful shutdown because it gives the client the ability to easily reconnect by providing its client identity and resuming where it left off.  
 
-Should the disconnect happen suddenly without time for a publisher to send a DISCONNECT message, the broker may send subscribers a message from the publisher that the broker has previously cached. The message, which is called a last will and testament, provides subscribers with instructions for what to do if the publisher dies unexpectedly.
+The broker may send subscribers a message from the publisher that the broker has previously cached if the disconnect happen suddenly without time for a publisher to send a DISCONNECT message. The message, which is called a last will and testament, provides subscribers with instructions for what to do if the publisher dies unexpectedly.
 
 
 
