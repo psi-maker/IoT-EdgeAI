@@ -19,13 +19,6 @@ Modles->Optimizer->IR->Inference Engine-> Extracting Results ->Edge deployment
 *	ResNet
 *	Inception
   
-# Supported frameworks by OpenVINO Toolkit
-* https://caffe.berkeleyvision.org/ UC Berkeley
-* https://www.tensorflow.org/ Google Brain
-* https://mxnet.apache.org/  Apache Software
-* https://onnx.ai/  which can support PyTorch and Apple ML models through another conversion step. combined effort of Facebook and Microsoft
-* https://kaldi-asr.org/doc/dnn.html originally an individual’s effort, primarily focused on speech recognition data
-
 # Deep learning models
 1. We need DL models to fetch into OpenVINO inference engine. Using a tool, such as Caffe, to create and train a CNN inference model or directly use the pretrained models from below link.  
 https://software.intel.com/en-us/openvino-toolkit/documentation/pretrained-models  
@@ -56,4 +49,11 @@ Some notes for pre-process input data by openCV2 coding is as following:
 *	The image is actually descripted as a matrix. For OpenCV of Python，image is the NumPy array, can be changed by .transpose and .reshape method/function 
 
 # Model optimizer
-If a model is not one of the pre-converted models in the Pre-Trained Models OpenVINO provides, we required the step of model optimizer to move onto the Inference Engine.
+If a model is not one of the pre-converted models in the Pre-Trained Models OpenVINO provides, we required the step of model optimizer to move onto the Inference Engine.  
+Assumes you have a network model trained using a supported deep learning framework.  
+Supported frameworks by OpenVINO Toolkit
+* https://caffe.berkeleyvision.org/ UC Berkeley
+* https://www.tensorflow.org/ Google Brain
+* https://mxnet.apache.org/  Apache Software
+* https://onnx.ai/  which can support PyTorch and Apple ML models through another conversion step. combined effort of Facebook and Microsoft
+* https://kaldi-asr.org/doc/dnn.html originally an individual’s effort, primarily focused on speech recognition data
