@@ -76,7 +76,9 @@ Example: 智能家居
 * 家里的所有电器的电量消耗，可以使用AMQP协议，传输到云端或家庭网关中进行分析；数据查看和交换
 * 最后用户想把自家的能耗查询服务公布到互联网上，那么可以使用REST/HTTP来开放API服务。 松耦合应用
 
-# MQ Telemetry Transport
+# MQ Telemetry Transport  
+Quote: https://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport  
+
 MQTT was previously known as the SCADA protocol, MQ Integrator SCADA Device Protocol (MQIsdp) and WebSphere MQTT (WMQTT), although all these variations have fallen out of use.  
 
 TT in MQTT stands for Telemetry Transport, the MQ is in reference to a product called IBM MQ. It is a good choice for wireless networks that experience varying levels of latency due to occasional bandwidth constraints or unreliable connections. MQTT has two objects:  
