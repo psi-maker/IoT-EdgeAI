@@ -6,73 +6,22 @@
 
 # 常见通信协议
 ![IoT Communication Protocol](protocol.GIF)
-1. REST/HTTP(松耦合服务调用)
-> REST即表述性状态传递，基于HTTP协议开发的一种通信风格。  
+1. REST/HTTP(松耦合服务调用): 表述性状态传递，基于HTTP协议开发的一种通信风格。  
 > 适用范围：REST/HTTP主要为了简化互联网中的系统架构，快速实现客户端和服务器之间交互的松耦合，降低了客户端和服务器之间的交互延迟。因此适合在物联网的应用层面，通过REST开放物联网中资源，实现服务被其他应用所调用。  
 > 特点：
 >> * REST 指的是一组架构约束条件和原则。满足这些约束条件和原则的应用程序或设计就是RESTful。
 >> * 客户端和服务器之间的交互在请求之间是无状态的。
 >> * 在服务器端，应用程序状态和功能可以分为各种资源，它向客户端公开，每个资源都使用 URI 得到一个唯一的地址。所有资源都共享统一的界面，以便在客户端和服务器之间传输状态。
 >> * 使用的是标准的 HTTP 方法，比如：GET、PUT、POST 和 DELETE。  
-2. CoAP协议
-
-CoAP(Constrained Application Protocol)，受限应用协议，应用于无线传感网中协议。
-
-　　适用范围：CoAP是简化了HTTP协议的RESTful API，CoAP是6LowPAN协议栈中的应用层协议，它适用于在资源受限的通信的IP网络。
-
-
-
-三、MQTT协议(低带宽)
-
-　　MQTT (Message
-
-Queuing Telemetry Transport )，消息队列遥测传输，由IBM开发的即时通讯协议，相比来说比较适合物联网场景的通讯协议。MQTT协议采用发布/订阅模式，所有的物联网终端都通过TCP连接到云端，云端通过主题的方式管理各个设备关注的通讯内容，负责将设备与设备之间消息的转发。
-
-
-
-　　适用范围：在低带宽、不可靠的网络下提供基于云平台的远程设备的数据传输和监控。
-
-
-
-四、DDS协议(高可靠性、实时)
-
-　　DDS(Data Distribution Service for Real-Time Systems)，面向实时系统的数据分布服务。
-
-
-
-适用范围：分布式高可靠性、实时传输设备数据通信。目前DDS已经广泛应用于国防、民航、工业控制等领域。
-
- 
-
-五、AMQP协议(互操作性)
-
-AMQP(Advanced Message Queuing Protocol)，先进消息队列协议，用于业务系统例如PLM，ERP，MES等进行数据交换。
-
-
-
-　　适用范围：最早应用于金融系统之间的交易消息传递，在物联网应用中，主要适用于移动手持设备与后台数据中心的通信和分析。
-
-
-
-六、XMPP协议(即时通信)
-
-　　XMPP(Extensible Messaging and Presence Protocol)可扩展通讯和表示协议，一个开源形式组织产生的网络即时通信协议。
-
-
-
-适用范围：即时通信的应用程序，还能用在网络管理、游戏、远端系统监控等。
-
-
-
-七、JMS
-
-　　JMS (Java Message Service)，即消息服务，这是JAVA平台中著名的消息队列协议。
-
-
-
-　　Java消息服务应用程序接口，是一个Java平台中关于面向消息中间件(MOM)的API，用于在两个应用程序之间，或分布式系统中发送消息，进行异步通信。Java消息服务是一个与具体平台无关的API，绝大多数MOM提供商都对JMS提供支持。
-
-作者：昇润科技
-链接：https://www.jianshu.com/p/f5a6977e9fef
-来源：简书
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+2. CoAP协议: Constrained Application Protocol，受限应用协议，应用于无线传感网中协议。  
+适用范围：CoAP是简化了HTTP协议的RESTful API，CoAP是6LowPAN协议栈中的应用层协议，它适用于在资源受限的通信的IP网络。   
+3. MQTT协议(低带宽): Message Queuing Telemetry Transport，消息队列遥测传输，由IBM开发的即时通讯协议，相比来说比较适合物联网场景的通讯协议。MQTT协议采用发布/订阅模式，所有的物联网终端都通过TCP连接到云端，云端通过主题的方式管理各个设备关注的通讯内容，负责将设备与设备之间消息的转发。  
+适用范围：在低带宽、不可靠的网络下提供基于云平台的远程设备的数据传输和监控。  
+4. DDS协议(高可靠性、实时): Data Distribution Service for Real-Time Systems，面向实时系统的数据分布服务。  
+适用范围：分布式高可靠性、实时传输设备数据通信。目前DDS已经广泛应用于国防、民航、工业控制等领域。  
+5. AMQP协议(互操作性): Advanced Message Queuing Protocol，先进消息队列协议，用于业务系统例如PLM，ERP，MES等进行数据交换。  
+适用范围：最早应用于金融系统之间的交易消息传递，在物联网应用中，主要适用于移动手持设备与后台数据中心的通信和分析。  
+6. XMPP协议(即时通信): Extensible Messaging and Presence Protocol，可扩展通讯和表示协议，一个开源形式组织产生的网络即时通信协议。  
+适用范围：即时通信的应用程序，还能用在网络管理、游戏、远端系统监控等。  
+7. JMS： Java Message Service，即消息服务，JAVA平台中著名的消息队列协议。  
+Java消息服务应用程序接口，是一个Java平台中关于面向消息中间件(MOM)的API，用于在两个应用程序之间，或分布式系统中发送消息，进行异步通信。Java消息服务是一个与具体平台无关的API，绝大多数MOM提供商都对JMS提供支持。
