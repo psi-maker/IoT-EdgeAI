@@ -20,6 +20,10 @@ Optimized models can expedite development and improve image processing pipelines
 * Use the Benchmark C++ Tool to estimate deep learning inference performance on supported devices. Performance can be measured for two inference modes: synchronous (latency-oriented) and asynchronous (throughput-oriented)  
 * Accuracy Checker Tool - Measure accuracy  
 * Calibration Tool - Calibrate model.  
+* Inference Engine Collect Statistics Tool collects statistics for a given model  
+* downloader.py (model downloader) downloads model files from online sources and, if necessary, patches them to make them more usable with Model Optimizer  
+*  converter.py (model converter) converts the models that are not in the Inference Engine IR format into that format using Model Optimizer  
+* info_dumper.py (model information dumper) prints information about the models in a stable machine-readable format  
 
 ## Key examples
 > Run the application with inference executed in the asynchronous mode  
