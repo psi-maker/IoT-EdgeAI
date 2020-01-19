@@ -1,6 +1,6 @@
 Optimized models can expedite development and improve image processing pipelines.  
 * [OpenVINO toolkit pretrained models](https://software.intel.com/en-us/openvino-toolkit/documentation/pretrained-models)  
-* ![Detailed info. for OpenVINO Pretrained Models](https://docs.openvinotoolkit.org/latest/_docs_resources_introduction.html)  
+* [Detailed info. for OpenVINO Pretrained Models](https://docs.openvinotoolkit.org/latest/_docs_resources_introduction.html)  
 * [OpenVINO Toolkit Open Model Zoo repository](https://github.com/opencv/open_model_zoo)  
 * [Intel IoT developer's tools, templates, libraries, DL project reference](https://devmesh.intel.com/topics/31)  
 ![How to use models](use_models.GIF)   
