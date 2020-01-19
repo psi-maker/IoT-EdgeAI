@@ -35,6 +35,9 @@ Optimized models can expedite development and improve image processing pipelines
 
 > It is sure that we can run and stack different models synchronously or asynchronously  
 > We can have multi-channel scenarios, such as face detection and human pose estimation  
-> Involved deep learning networks: R-CNN,SSD,YOLOv3
- 
+> Involved deep learning networks: R-CNN,SSD,YOLOv3  
+> AI city project https://github.com/incluit/OpenVino-For-SmartCity  
+> Driver Behaviour https://github.com/incluit/OpenVino-Driver-Behaviour  
 
+## Intel IoT webpage
+https://devmesh.intel.com/topics/31  
