@@ -71,11 +71,11 @@ FOR DANGEROUS BACTERIAS AND HARMFUL PARTICLES: https://cleanwaterai.com/
 * Detecting caries(cavities) from an X-Ray image of a patient  
 * iRiS is a preventive solution consisted of a mobile application connected to an independent, small and easy to use module equipped with an infrared thermal camera. iRiS will allow women to scan their upper body area and detect breast cancer (if present) at its early stages  
 * give a new vision to visually impaired people  
-![Night Vision](nightvision.GIF)  
+![Night Vision](img/nightvision.GIF)  
 *  detect and prevent oral cancer  
 * Eye movement when reading could be an early indicator of Alzheimer's. So tracking the eye movements can help in predicting  Alzheimer's. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5332166/     
-* Transradial myoelectric prosthesis that send use data gathered by Myo armband (Thalmic Labs) into cloud through Intel Edison board.      
-![adamhand](adamhand.GIF)
+* Transradial myoelectric prosthesis that send use data gathered by Myo armband (Thalmic Labs) into cloud through Intel Edison board. https://www.instructables.com/id/ADAMS-Hand-a-Low-cost-Myoelectric-Transradial-Pros/       
+![adamhand](img/adamhand.GIF)
 
 ## Coding software for inexperienced person
 * Scratch - Scratch is a visual programming language that makes it easy to create interactive art, stories, simulations and games. (http://scratch.mit.edu/)  
