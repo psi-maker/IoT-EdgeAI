@@ -43,6 +43,9 @@ Optimized models can expedite development and improve image processing pipelines
 https://devmesh.intel.com/topics/31  
 ## Smart City
 * an engineering technique to track and monitor the various quality parameters of water (pH, dissolved oxygen, temperature, conductivity, etc.)  
+* Garbage Sorting and Separation  
+![Garbage Sorting](garbagesplit.GIF)  
+* 
 ## Industry
 * an equipment adaptive predictive maintenance system that keeps improving with operation time and reduces the diagnostic work: 6 Sigma DMAIC methodology  
 ## Healthcare
@@ -56,5 +59,6 @@ https://devmesh.intel.com/topics/31
 * TrueSight is the potential solution to providing assistance to the visually impaired in a world of complex ambient activities and interactions. It leverages the power of AI in Computer Vision to analyze real-time events and generate feedback in the form of audio to keep the user as aware as possible  
 * ProBion consists of two main components, the interpreter which receives signals from neurons and the AI program interprets the signal and instruction sets in relation to these signals are sent to the second component which is the prosthetic limb or exoskeleton  
 * Automated Doctor Machine. The machine has all the required input sensors inbuilt to check the condition of the patient and also provides a diagnosis report with medicines.And this machine can be installed easily anywhere and it can be easily accessed using patient's unique card. All the payment are done online after providing the medicines to the patients. After receiving the medicines, the patient's health report is updated to the health record in his cloud account. So when he meets the doctor in future, the doctor can easily get his up to date health record and the doctor can also use the webapp to update his health record  
-* 
+* Invasive Ductal Carcinoma (IDC) Classification Using Computer Vision & IoT combines Computer Vision and the Internet of Things to provide researchers, doctors and students with a way to train a neural network with labelled breast cancer histology images to detect Invasive Ductal Carcinoma (IDC) in unseen/unlabelled images:  Inception V3 model https://github.com/iotJumpway/Intel-Examples/tree/master/Intel-Movidius/IDC-Classification  
+
 
