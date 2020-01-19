@@ -39,5 +39,5 @@ Optimized models can expedite development and improve image processing pipelines
 > AI city project https://github.com/incluit/OpenVino-For-SmartCity  
 > Driver Behaviour https://github.com/incluit/OpenVino-Driver-Behaviour  
 
-## Intel IoT webpage
+# Intel IoT webpage
 https://devmesh.intel.com/topics/31  
