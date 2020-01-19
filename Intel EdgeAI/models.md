@@ -17,5 +17,11 @@ Optimized models can expedite development and improve image processing pipelines
 > **INSTANCE SEGMENTATION**: Similar to semantic segmentation, this form of inference is done on a pixel-by-pixel basis, but different objects of the same class are separately identified.  
 
 ## Running mechanism
+> run the application with inference executed in the asynchronous mode  
+>> * at start-up, application reads command line parameters and loads specified network and input images to the Inference Engine plugin. The batch size of the network is set according to the number of read images  
+>> * then the app. creates an inference request object and assigns completion callback for it. In scope of the completion callback handling the inference request is executed again  
+>> * After that, the app. starts inference for the first infer request and waits of 10th inference request execution being completed. When inference is done, the application outputs data to the standard output stream.  
 
+> dfdd
+ 
 
