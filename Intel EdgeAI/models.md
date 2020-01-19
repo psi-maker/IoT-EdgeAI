@@ -45,7 +45,9 @@ https://devmesh.intel.com/topics/31
 * an engineering technique to track and monitor the various quality parameters of water (pH, dissolved oxygen, temperature, conductivity, etc.)  
 * Garbage Sorting and Separation  
 ![Garbage Sorting](garbagesplit.GIF)  
-* 
+![Garbage Sorting2](garbagesplit2.GIF)  
+* CLEAN WATER AI IS AN IOT DEVICE THAT CONTINUOUSLY MONITORS WATER QUALITY AROUND WATER SOURCES
+FOR DANGEROUS BACTERIAS AND HARMFUL PARTICLES: https://cleanwaterai.com/  
 ## Industry
 * an equipment adaptive predictive maintenance system that keeps improving with operation time and reduces the diagnostic work: 6 Sigma DMAIC methodology  
 ## Healthcare
