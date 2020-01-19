@@ -31,6 +31,7 @@ Optimized models can expedite development and improve image processing pipelines
 >> * then the app. creates an inference request object and assigns completion callback for it. In scope of the completion callback handling the inference request is executed again  
 >> * After that, the app. starts inference for the first infer request and waits of 10th inference request execution being completed. When inference is done, the application outputs data to the standard output stream.  
 
+> It is sure that we can run and stack different models synchronously or asynchronously  
 > We can have multi-channel scenarios, such as face detection and human pose estimation  
 > Involved deep learning networks: R-CNN,SSD,YOLOv3
  
