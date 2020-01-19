@@ -1,5 +1,6 @@
 Optimized models can expedite development and improve image processing pipelines.  
-* [OpenVINO toolkit pretrained models](https://software.intel.com/en-us/openvino-toolkit/documentation/pretrained-models)    
+* [OpenVINO toolkit pretrained models](https://software.intel.com/en-us/openvino-toolkit/documentation/pretrained-models)  
+* [Detailed info. for OpenVINO Pretrained] Models(https://docs.openvinotoolkit.org/latest/_docs_resources_introduction.html)  
 * [OpenVINO Toolkit Open Model Zoo repository](https://github.com/opencv/open_model_zoo)  
 * [Intel IoT developer's tools, templates, libraries, DL project reference](https://devmesh.intel.com/topics/31)  
 ![How to use models](use_models.GIF)   
@@ -14,4 +15,6 @@ Optimized models can expedite development and improve image processing pipelines
 >> 2)	Classification: classify the object in bounding box. CNN model scan the picture by kernel to extract the image feature, pooling the feature matrix and output for next layer process kernel, by this loop, the last full convolution layer will convert the feature matrix to probability.  
 
 > **INSTANCE SEGMENTATION**: Similar to semantic segmentation, this form of inference is done on a pixel-by-pixel basis, but different objects of the same class are separately identified.  
+
+## 
 
