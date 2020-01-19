@@ -39,5 +39,22 @@ Optimized models can expedite development and improve image processing pipelines
 > AI city project https://github.com/incluit/OpenVino-For-SmartCity  
 > Driver Behaviour https://github.com/incluit/OpenVino-Driver-Behaviour  
 
-# Intel IoT webpage
+# Intel IoT webpage for brainstorming
 https://devmesh.intel.com/topics/31  
+## Smart City
+* an engineering technique to track and monitor the various quality parameters of water (pH, dissolved oxygen, temperature, conductivity, etc.)  
+## Industry
+* an equipment adaptive predictive maintenance system that keeps improving with operation time and reduces the diagnostic work: 6 Sigma DMAIC methodology  
+## Healthcare
+* Identification of Pathological Disease in Plants Using Intel Distribution of OpenVINO Toolkit  
+* Using AI Streaming platform for fitness professionals, yoga teachers, dance instructors so they can host live class with live feedbacks: Using AI Streaming platform for fitness professionals, yoga teachers, dance instructors so they can host live class with live feedbacks    
+* Using AI Streaming platform for fitness professionals, yoga teachers, dance instructors so they can host live class with live feedbacks  
+* Acute Myeloid & Lymphoblastic Leukemia Detection System: https://github.com/AMLResearchProject/AML-ALL-Detection-System  
+* Identifying Viral and Bacterial Pneumonia from Chest X-Ray Images using TensorFlow  
+* dynamically conceive the motion of a user's hand and ascertain the difference between intentional movement and unintentional movement. Further we quantify, verify and attempt to provide haptic response to the users' fingers with the help of electroactive polymers to help counteract the unwanted vibration. (For the proof of concept, used Coin Motors)  
+* SadiaX uses Intel distribution of OPENVINO and deep learning to detect the position of the patient and predict falls  
+* TrueSight is the potential solution to providing assistance to the visually impaired in a world of complex ambient activities and interactions. It leverages the power of AI in Computer Vision to analyze real-time events and generate feedback in the form of audio to keep the user as aware as possible  
+* ProBion consists of two main components, the interpreter which receives signals from neurons and the AI program interprets the signal and instruction sets in relation to these signals are sent to the second component which is the prosthetic limb or exoskeleton  
+* Automated Doctor Machine. The machine has all the required input sensors inbuilt to check the condition of the patient and also provides a diagnosis report with medicines.And this machine can be installed easily anywhere and it can be easily accessed using patient's unique card. All the payment are done online after providing the medicines to the patients. After receiving the medicines, the patient's health report is updated to the health record in his cloud account. So when he meets the doctor in future, the doctor can easily get his up to date health record and the doctor can also use the webapp to update his health record  
+* 
+
