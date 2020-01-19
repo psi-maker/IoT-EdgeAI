@@ -51,6 +51,8 @@ FOR DANGEROUS BACTERIAS AND HARMFUL PARTICLES: https://cleanwaterai.com/
 ## Smart Home
 * VeggieBox is a home appliance that can examine ingredients and suggest the best recipes for a good healthy meal out of those ingredients. VeggieBox itself is an standalone device but has great potential to be a front-end device whose centralized servers process instantly recipe searches and collect meal photos. Backend technology uses NodeJS with ExpressJS for serving and ElasticSearch for database and searching.  
 ![GoodMeal](img/goodmeal.GIF)  
+## Education
+* When a teacher talks/teaches about something, at the same time, the AI developed will recognize all those things, gathers information from the web or other servers, and make it visible to every one. This AI will also analyze the classes, each student, and add on additional information at the same time while a teacher is teaching. The teacher can also ask the AI to send all those information to every students' mail   
 ## Industry
 * an equipment adaptive predictive maintenance system that keeps improving with operation time and reduces the diagnostic work: 6 Sigma DMAIC methodology  
 ## Healthcare
@@ -66,5 +68,17 @@ FOR DANGEROUS BACTERIAS AND HARMFUL PARTICLES: https://cleanwaterai.com/
 * Automated Doctor Machine. The machine has all the required input sensors inbuilt to check the condition of the patient and also provides a diagnosis report with medicines.And this machine can be installed easily anywhere and it can be easily accessed using patient's unique card. All the payment are done online after providing the medicines to the patients. After receiving the medicines, the patient's health report is updated to the health record in his cloud account. So when he meets the doctor in future, the doctor can easily get his up to date health record and the doctor can also use the webapp to update his health record  
 * Invasive Ductal Carcinoma (IDC) Classification Using Computer Vision & IoT combines Computer Vision and the Internet of Things to provide researchers, doctors and students with a way to train a neural network with labelled breast cancer histology images to detect Invasive Ductal Carcinoma (IDC) in unseen/unlabelled images:  Inception V3 model https://github.com/iotJumpway/Intel-Examples/tree/master/Intel-Movidius/IDC-Classification  
 * Ultrasonic Sight is an electronic device for mobility, sociality and welfare of blind and visually impaired people  
+* Detecting caries(cavities) from an X-Ray image of a patient  
+* iRiS is a preventive solution consisted of a mobile application connected to an independent, small and easy to use module equipped with an infrared thermal camera. iRiS will allow women to scan their upper body area and detect breast cancer (if present) at its early stages  
+* give a new vision to visually impaired people  
+![Night Vision](nightvision.GIF)  
+*  detect and prevent oral cancer  
+* Eye movement when reading could be an early indicator of Alzheimer's. So tracking the eye movements can help in predicting  Alzheimer's. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5332166/     
+* Transradial myoelectric prosthesis that send use data gathered by Myo armband (Thalmic Labs) into cloud through Intel Edison board.      
+![adamhand](adamhand.GIF)
+
+## Coding software for inexperienced person
+* Scratch - Scratch is a visual programming language that makes it easy to create interactive art, stories, simulations and games. (http://scratch.mit.edu/)  
+* MIT App Inventor - App Inventor is a tool which enables inexperienced novice users create a basic, fully functional application within an hour or less. MIT App Inventor can be combined with Intel IoT devices to create smart IoT solutions by kids. (http://appinventor.mit.edu/)  
 
 
