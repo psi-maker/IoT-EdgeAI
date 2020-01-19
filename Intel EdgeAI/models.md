@@ -1,9 +1,9 @@
 Optimized models can expedite development and improve image processing pipelines.  
-* [OpenVIN toolkit pretrained models](https://software.intel.com/en-us/openvino-toolkit/documentation/pretrained-models)    
+* [OpenVINO toolkit pretrained models](https://software.intel.com/en-us/openvino-toolkit/documentation/pretrained-models)    
 * [OpenVINO Toolkit Open Model Zoo repository](https://github.com/opencv/open_model_zoo)  
 * [Intel IoT developer's tools, templates, libraries, DL project reference](https://devmesh.intel.com/topics/31)  
-
-# OpenVIN toolkit pretrained models
+![How to use models](use_models.GIF)   
+# OpenVINO toolkit pretrained models
 > **IMAGE CLASSIFICATION**: A form of inference in which an object in an image is determined to be of a particular class, such as a cat vs. a dog.  
 
 > **OBJECT DETECTION**: A form of inference in which objects within an image are detected, and a bounding box is output based on where in the image the object was detected. Usually, this is combined with some form of classification to also output which class the detected object belongs to.  
