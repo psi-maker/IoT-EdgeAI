@@ -43,7 +43,7 @@ Optimized models can expedite development and improve image processing pipelines
 https://devmesh.intel.com/topics/31  
 ## Smart City
 * an engineering technique to track and monitor the various quality parameters of water (pH, dissolved oxygen, temperature, conductivity, etc.)  
-* Garbage Sorting and Separation  
+* Garbage Sorting and Separation: https://github.com/brianhbi/Waste-Classifier 
 ![Garbage Sorting](garbagesplit.GIF)  
 ![Garbage Sorting2](garbagesplit2.GIF)  
 * CLEAN WATER AI IS AN IOT DEVICE THAT CONTINUOUSLY MONITORS WATER QUALITY AROUND WATER SOURCES
