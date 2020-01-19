@@ -48,6 +48,8 @@ https://devmesh.intel.com/topics/31
 ![Garbage Sorting2](garbagesplit2.GIF)  
 * CLEAN WATER AI IS AN IOT DEVICE THAT CONTINUOUSLY MONITORS WATER QUALITY AROUND WATER SOURCES
 FOR DANGEROUS BACTERIAS AND HARMFUL PARTICLES: https://cleanwaterai.com/  
+## Smart Home
+* VeggieBox is a home appliance that can examine ingredients and suggest the best recipes for a good healthy meal out of those ingredients. VeggieBox itself is an standalone device but has great potential to be a front-end device whose centralized servers process instantly recipe searches and collect meal photos. Backend technology uses NodeJS with ExpressJS for serving and ElasticSearch for database and searching.
 ## Industry
 * an equipment adaptive predictive maintenance system that keeps improving with operation time and reduces the diagnostic work: 6 Sigma DMAIC methodology  
 ## Healthcare
