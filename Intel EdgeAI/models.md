@@ -16,5 +16,6 @@ Optimized models can expedite development and improve image processing pipelines
 
 > **INSTANCE SEGMENTATION**: Similar to semantic segmentation, this form of inference is done on a pixel-by-pixel basis, but different objects of the same class are separately identified.  
 
-## 
+## Running mechanism
+
 
