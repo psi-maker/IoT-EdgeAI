@@ -106,7 +106,7 @@ AWS IoT Core:
 AWS elasticsearch service:   
 * Data stored and indexed throught elasticsearch  
 * Analytics with Kibana, and Cloud dashboarding was delivered using kibana near-realtime dashboards.  
-IMPROVEMENT BY DAVID  
+# Optimization  
 *	At first set reasonable physical facility to slowdown speed on crossroad  
 * Put cameras for each road on the crossroad, directly face the road. Use the same edge devices to finish basic information calculation. (Conditions, object speed, object category, dangerous metrics, etc.)  
 *	Calculated information can send to a hub device nearby, and do integration process. (Simulate the future and find possible dangerous)  
