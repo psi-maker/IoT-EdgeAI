@@ -112,3 +112,4 @@ AWS elasticsearch service:
 *	Calculated information can send to a hub device nearby, and do integration process. (Simulate the future and find possible dangerous)  
 *	Object can receive the blinded area conditions or alert for simulated possible dangerous by pda or navigator  
 *	Send the picture immediately to police and hospital if accident is found   
+* Improve the matrix calculation for the reflection from 3-dimension to 2-dimension 
