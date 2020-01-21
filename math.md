@@ -1,9 +1,5 @@
 Mathematics theory and tools for YOLO framework  
 ---
-![Formula](http://latex.codecogs.com/gif.latex?\frac{1}{1+sin(x)})
-
-
-
 # BOUNDING BOX
 p 可能性，（bx, by, bh, bw）边框位置，（c1, c2, c3）目标分类;
 [p, bx, by, bh, bw, c1, c2, c3]
@@ -20,7 +16,7 @@ Anchor Box（锚框）：锚点的提出使得候选框能够更加完整精确�
 NMS（非极大值抑制）
 图像目标检测的最初想法就是用一个框去从左到右从上到下（滑窗）扫描一张图片，这样的话就有可能有很多个点会声明（表示）自己发现了目标，只是p 可能性（或者IoU）有大有小，非极大值抑制就是把“不是最大可能性”的给抑制（“丢弃”），或者说保留可能性最大的。
 NMS方法并不复杂，其核心思想是：选择得分最高的作为输出，与该输出重叠的去掉，不断重复这一过程直到所有备选处理完。YOLO的NMS计算方法如下。
-网络输出的7*7*30的张量，在每一个网格中，对象 \$C_i$位于第j个bounding box的得分: $Score_ij$=P($C_i$|Object)*$Conf_j$  代表着某个对象$C_i$存在于第j个bounding box的可能性。每个网格有(20个对象的概率*2个bounding box的置信度)40个得分（候选对象）。49个网格共1960个得分。Andrew Ng建议每种对象分别进行NMS，那么每种对象有 1960/20=98 个得分。
+网络输出的7*7*30的张量，在每一个网格中，对象![Formula](http://latex.codecogs.com/gif.latex?\$C_i$) 位于第j个bounding box的得分: ![Formula](http://latex.codecogs.com/gif.latex?\$$Score_ij$=P($C_i$|Object)*$Conf_j$$)代表着某个对象![Formula](http://latex.codecogs.com/gif.latex?\$C_i$)存在于第j个bounding box的可能性。每个网格有(20个对象的概率*2个bounding box的置信度)40个得分（候选对象）。49个网格共1960个得分。Andrew Ng建议每种对象分别进行NMS，那么每种对象有 1960/20=98 个得分。
 NMS步骤如下：
 1）设置一个Score的阈值，低于该阈值的候选对象排除掉（将该Score设为0）
 2）遍历每一个对象类别
