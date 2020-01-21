@@ -27,7 +27,7 @@ YOLO将Faster RCNN的两个阶段合二为一，使用预测区来代替候选�
 > 对于2个bounding box的置信度  
 * conf = Pr(obj)* $ IOU ^{truth pred}$  
 * IOU计算方法, IOU大的bounding box其Pr(obj)=1来负责预测某个对象是否存在,就是这个bounding box的  
-![Formula](http://latex.codecogs.com/gif.latex?\$conf=IOU^{truth\ pred}$)   
+![Formula](http://latex.codecogs.com/gif.latex?\$conf=IOU^{truth}{\ }{pred}}$)   
 ![Bounding Box](img/bbox.GIF)    
 在训练过程中等网络输出以后，比较两个bounding box与某个物体实际位置的IOU，物体的位置（实际bounding box）放置在IOU比较大的那个bounding box（图中假设是bounding box1），且该bounding box的置信度设为1。  
 >	损失函数：损失是网络实际输出值与样本标签值之间的偏差  
