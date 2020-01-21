@@ -74,7 +74,7 @@ P(Norfolk terrier) = P(Norfolk terrier|terrier) * P(terrier|hunting dog) * P(hun
 f(i,j)=w1*p1+w2*p2+w3*p3+w4*p4; 其中，pi(i=1,2,3,4)为最近的四个像素点，wi(i=1,2,3,4)为各点相应权值。关于权值的计算，可参考维基百科。  
 ![Bilinear](img/bilinear.GIF)  
 假如我们想得到未知函数 f 在点 P = (x, y) 的值，假设我们已知函数 f 在 Q11 = (x1, y1)、Q12 = (x1, y2), Q21 = (x2, y1) 以及 Q22 = (x2, y2) 四个点的值。最常见的情况，f就是一个像素点的像素值。首先在 x 方向进行线性插值，得到    
-* ![Formula](http://latex.codecogs.com/gif.latex?\$f(R_1) \approx \frac{x_2-x}{x_2-x_1} f(Q_11) + \frac{x-x_1}{x_2-x_1} f(Q_21)$) where R_1=(x,y_1)    
+* ![Formula](http://latex.codecogs.com/gif.latex?\${f(R_1) \approx \frac{x_2-x}{x_2-x_1} f(Q_11) + \frac{x-x_1}{x_2-x_1} f(Q_21)}$) where R_1=(x,y_1)    
 * ![Formula](http://latex.codecogs.com/gif.latex?\$f(R_2)\approx{\frac{x_2-x}{x_2-x_1}\left}f(Q_12)\right+{\frac{x-x_1}{x_2-x_1}\left}f(Q_22)\right$) where R_2=(x,y_2)       
 然后在 y 方向进行线性插值，得到    
 * ![Formula](http://latex.codecogs.com/gif.latex?\$f(P)\approx{\frac{y_2-y}{y_2-y_1}\left}f(R_1)\right+{\frac{y-y_1}{y_2-y_1}\left}f(R_2)\right$)       
