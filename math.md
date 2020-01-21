@@ -74,13 +74,12 @@ P(Norfolk terrier) = P(Norfolk terrier|terrier) * P(terrier|hunting dog) * P(hun
 f(i,j)=w1*p1+w2*p2+w3*p3+w4*p4; 其中，pi(i=1,2,3,4)为最近的四个像素点，wi(i=1,2,3,4)为各点相应权值。关于权值的计算，可参考维基百科。  
 ![Bilinear](img/bilinear.GIF)  
 假如我们想得到未知函数 f 在点 P = (x, y) 的值，假设我们已知函数 f 在 Q11 = (x1, y1)、Q12 = (x1, y2), Q21 = (x2, y1) 以及 Q22 = (x2, y2) 四个点的值。最常见的情况，f就是一个像素点的像素值。首先在 x 方向进行线性插值，得到    
-
-* ![Formula](http://latex.codecogs.com/gif.latex?\${f(R_1)}{\approx}{\frac{x_2-x}{x_2-x_1}}{f(Q_{11})}+{\frac{x-x_1}{x_2-x_1}}{f(Q_{21})}$) where R_1=(x,y_1)    
-* ![Formula](http://latex.codecogs.com/gif.latex?\$f(R_2)\approx{\frac{x_2-x}{x_2-x_1}\left}f(Q_12)\right+{\frac{x-x_1}{x_2-x_1}\left}f(Q_22)\right$) where R_2=(x,y_2)       
+* ![1](img/1.gif)        
+* ![2](img/2.gif)  
 然后在 y 方向进行线性插值，得到    
-* ![Formula](http://latex.codecogs.com/gif.latex?\$f(P)\approx{\frac{y_2-y}{y_2-y_1}\left}f(R_1)\right+{\frac{y-y_1}{y_2-y_1}\left}f(R_2)\right$)       
+* ![3](img/3.gif)       
 综合起来就是双线性插值最后的结果    
-* ![Formula](http://latex.codecogs.com/gif.latex?\$f(x,y)\approx{\frac{f(Q_11)}{(x_2-x_1)(y_2-y_1)}\left}(x_2-x)(y_2-y)\right+{\frac{f(Q_21)}\left}(x-x_1)(y_2-y)\right+{\frac{f(Q_12)}{(x_2-x_1)(y_2-y_1)}\left}(x_2-x)(y-y_1)\right+{\frac{f(Q_22)}{(x_2-x_1)(y_2-y_1)}\left}(x-x_x1)(y-y_1)\right$)     
+* ![4](img/4.gif)       
 由于图像双线性插值只会用相邻的4个点，因此上述公式的分母都是1  
 # ROI POOLING
 roi是在原图中的感兴趣区域，可以理解为目标检测的候选框也就是region of proposals，我们将原图进行特征提取的时候，就会提取到相应的feature map。那么相应的ROI就会在feature map上有映射，这个映射过程就是roi pooling的一部分，一般ROI的步骤会继续进行max pooling，进而得到我们需要的feature map，送入后面继续计算。根据ROIS提供的候选框坐标，映射到FeatureMap，然后进行max-pooling，和普通的max-pooling的不同之处在于池化窗口的内部的各自包含的特征值数量不一样。    
