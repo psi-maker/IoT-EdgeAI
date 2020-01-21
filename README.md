@@ -36,10 +36,10 @@ Items for user requirement:
 + Decided to deploy the AI city project https://github.com/incluit/OpenVino-For-SmartCity in my laptop.
 This document is the conclusion for Intel OpenVINO pretrained models, OpenVINO Open Model Zoo repository, and Intel IoT project reference webpage.  
 
-# D6 20, Jan. 2020 
+## D6 20, Jan. 2020 
 + Conclude the structure, hardware, software, theory and optimization /Intel%20EdgeAI/projects/smart_city.md
 
-# D7 21, Jan. 2020 Basic mathematics for DL, and YOLO analysis 
+## D7 21, Jan. 2020 Basic mathematics for DL, and YOLO analysis 
 + Related mathematics theory for YOLO framework math.md
 + YOLOv1 to YOLOv3 structures and evolution YOLO.md
 
