@@ -70,45 +70,41 @@ YOLO1并没有采用先验框，并且每个grid只预测两个bounding box，�
 YOLO2提出了Darknet-19（有19个卷积层和5个MaxPooling层）网络结构。DarkNet-19比VGG-16小一些，精度不弱于VGG-16，但浮点运算量减少到约1/5，以保证更快的运算速度。  
 
 YOLO2引入一种称为passthrough层的方法在特征图中保留一些细节信息。就是在最后一个pooling之前，特征图的大小是26*26*512，将其1拆4，直接传递（passthrough）到pooling后（并且又经过一组卷积）的特征图，两者叠加到一起作为输出的特征图。特征图先用1*1卷积从 26*26*512 降维到 26*26*64，再做1拆4并passthrough。  
-  
-去掉了全连接层，YOLO2可以输入任何尺寸的图像。因为整个网络下采样倍数是32，作者采用了{320,352,...,608}等10种输入图像的尺寸，这些尺寸的输入图像对应输出的特征图宽和高是{10,11,...19}。训练时每10个batch就随机更换一种尺寸，使网络能够适应各种大小的对象检测。  
-识别分类方法
-由于支持更多的分类，并且分类之间有可能是包含关系，对象分类用Logistic取代了softmax（互斥分类）
- 
-整个WordTree中的对象之间不是互斥的关系，但对于单个节点，属于它的所有子节点之间是互斥关系。比如terrier节点之下的Norfolk terrier、Yorkshire terrier、Bedlington terrier等，各品种的terrier之间是互斥的，所以子节点计算上可以进行softmax操作。
-约束预测边框的位置
-借鉴并优化了Faster RCNN的先验框方法：System predicts bounding boxes using dimension clusters as anchor boxes . The network predicts 4 coordinates for each bounding box t_x,t_y,t_w,t_h,. If the cell is offset from the top left corner of the image by (cx, cy) and the bounding box prior has width and height pw,ph, then the predictions correspond to:
-    
+![Passthrough](img/passthrough.GIF)    
 
-* 虚线是先验框，实线是预测框; 预测边框的蓝色中心点被约束在蓝色背景的网格内。约束边框位置使得模型更容易学习，且预测更为稳定  
-*YOLOv2调整了预测公式，将预测边框的中心约束在特定gird网格内  
-* $P_r$(obj)*IOU(b,obj)= $\sigma$ ($t_0$)是预测边框的置信度; YOLO1是直接预测置信度的值, YOLOv2对预测参数$t_0$进行$\sigma$变换后作为置信度的值, $\sigma$是sigmoid函数  
-* c_x,c_y是当前网格左上角到图像左上角的距离，要先将网格大小归一化，即令一个网格的宽=1，高=1 
-* p_w,p_h是先验框的宽和高  
-* t_x,t_y,t_w,t_h, t_0是要学习的参数，分别用于预测边框的中心和宽高, 以及置信度  
-* b_x,b_y,b_w,b_h是预测边框的中心和宽高  
-* 由于$\sigma$函数将t_x,t_y约束在(0,1)范围内，所以根据上面的计算公式，预测边框的蓝色中心点被约束在蓝色背景的网格内。约束边框位置使得模型更容易学习，且预测更为稳定。
-误差函数
-误差依然包括边框位置误差、置信度误差、对象分类误差
- 
-* $1_MaxIOU$<Thresh指 预测边框中与真实对象边框IOU最大的那个，其IOU<阈值Thresh，此系数为1，即计入误差，否则为0，不计入误差。YOLO2使用Thresh=0.6  
-* $1_t$<12800是前128000次迭代计入误差。注意这里是与先验框的误差，而不是与真实对象边框的误差。是为了在训练早期使模型更快学会先预测先验框的位置  
-* $1_k^truth$是该边框负责预测一个真实对象（边框内有对象）。各种$\lambda$是不同类型误差的调节系数  
+去掉了全连接层，YOLO2可以输入任何尺寸的图像。因为整个网络下采样倍数是32，作者采用了{320,352,...,608}等10种输入图像的尺寸，这些尺寸的输入图像对应输出的特征图宽和高是{10,11,...19}。训练时每10个batch就随机更换一种尺寸，使网络能够适应各种大小的对象检测。    
 
+## 识别分类方法
+由于支持更多的分类，并且分类之间有可能是包含关系，对象分类用Logistic取代了softmax（互斥分类）  
+![word tree](img/word_tree.GIF)  
+整个WordTree中的对象之间不是互斥的关系，但对于单个节点，属于它的所有子节点之间是互斥关系。比如terrier节点之下的Norfolk terrier、Yorkshire terrier、Bedlington terrier等，各品种的terrier之间是互斥的，所以子节点计算上可以进行softmax操作。  
+## 约束预测边框的位置
+借鉴并优化了Faster RCNN的先验框方法：System predicts bounding boxes using dimension clusters as anchor boxes . The network predicts 4 coordinates for each bounding box t_x,t_y,t_w,t_h,. If the cell is offset from the top left corner of the image by (cx, cy) and the bounding box prior has width and height pw,ph, then the predictions correspond to:  
+![bbbox](img/yolov2_bbox.GIF)  
+* 虚线是先验框，实线是预测框; 预测边框的蓝色中心点被约束在蓝色背景的网格内。约束边框位置使得模型更容易学习，且预测更为稳定    
+*YOLOv2调整了预测公式，将预测边框的中心约束在特定gird网格内    
+* ![Trust](img/truth.gif)是预测边框的置信度; YOLO1是直接预测置信度的值, YOLOv2对预测参数$t_0$进行$\sigma$变换后作为置信度的值, sigma是sigmoid函数        
+* c_x,c_y是当前网格左上角到图像左上角的距离，要先将网格大小归一化，即令一个网格的宽=1，高=1   
+* p_w,p_h是先验框的宽和高    
+* t_x,t_y,t_w,t_h, t_0是要学习的参数，分别用于预测边框的中心和宽高, 以及置信度    
+* b_x,b_y,b_w,b_h是预测边框的中心和宽高    
+* 由于sigma函数将t_x,t_y约束在(0,1)范围内，所以根据上面的计算公式，预测边框的蓝色中心点被约束在蓝色背景的网格内。约束边框位置使得模型更容易学习，且预测更为稳定。  
+## 误差函数
+误差依然包括边框位置误差、置信度误差、对象分类误差  
+![YOLOv2 Loss](img/YOLOv2_loss.GIF)
+* 1_MaxIOU<Thresh指 预测边框中与真实对象边框IOU最大的那个，其IOU<阈值Thresh，此系数为1，即计入误差，否则为0，不计入误差。YOLO2使用Thresh=0.6    
+* 1_t<12800是前128000次迭代计入误差。注意这里是与先验框的误差，而不是与真实对象边框的误差。是为了在训练早期使模型更快学会先预测先验框的位置    
+* 1_k^truth是该边框负责预测一个真实对象（边框内有对象）。各种lambda是不同类型误差的调节系数    
 
-
-YOLOV3
+# YOLOV3
 https://pjreddie.com/darknet/yolo/
- 
-* 调整了网络结构；利用多尺度特征进行对象检测    
-* 采用了称之为Darknet-53的网络结构（含有53个卷积层），它借鉴了残差网络residual network的做法，在一些层之间设置了快捷链路（shortcut connections）。YOLO2曾采用passthrough结构来检测细粒度特征，在YOLO3更进一步采用了3个不同尺度的特征图来进行对象检测   
-* Darknet-53相比于其它网络结构实现了每秒最高的浮点数计算量，说明其网络结构可以更好的利用GPU  
-* 残差模块有利于解决深层次网络的梯度问题，每个残差模块由两个卷积层和一个shortcut connections，
-1,2,8,8,4代表有几个重复的残差模块，整个v3结构里面，没有池化层和全连接层，网络的下采样是通过设置卷积的stride为2来达到的，每当通过这个卷积层之后图像的尺寸就会减小到一半。而每个卷积层的实现又是包含     卷积+BN+Leaky relu  ,每个残差模块之后又要加上一个zero padding  
- 
-* 预测对象类别时不使用softmax，改成使用logistic的输出进行预测。这样能够支持多标签对象（比如一个人有Woman 和 Person两个标签）  
-* FPN检测方法
-* ssd从依据多个feature map来做预测,但是底层的layer并没有选中做object detetion.底层的具有high resolution,但是不具备高级语义high semantic.ssd为了提高速度,在predict的时候不用比较底层的feature map.这一点也导致了它对小目标的检测效果不好.  
-* FPN本身并不是object detetcor.它只是一个feature detetor.  
-* FPN with RPN，FPN with Fast R-CNN or Faster R-CNN通过FPN,生成了feature map的金字塔(也就是一堆不同尺寸的特征图,都具有高级语义).然后用RPN生成ROI.然后对不同尺寸的目标,选用不同尺寸的特征图去做识别.小目标要用大尺寸的feature map. 大目标用小尺寸的feature map.
- 
+![YOLOv3](img/yolov3_net.gif)
+* 调整了网络结构；利用多尺度特征进行对象检测      
+* 采用了称之为Darknet-53的网络结构（含有53个卷积层），它借鉴了残差网络residual network的做法，在一些层之间设置了快捷链路（shortcut connections）。YOLO2曾采用passthrough结构来检测细粒度特征，在YOLO3更进一步采用了3个不同尺度的特征图来进行对象检测     
+* Darknet-53相比于其它网络结构实现了每秒最高的浮点数计算量，说明其网络结构可以更好的利用GPU    
+* 残差模块有利于解决深层次网络的梯度问题，每个残差模块由两个卷积层和一个shortcut connections，1,2,8,8,4代表有几个重复的残差模块，整个v3结构里面，没有池化层和全连接层，网络的下采样是通过设置卷积的stride为2来达到的，每当通过这个卷积层之后图像的尺寸就会减小到一半。而每个卷积层的实现又是包含     卷积+BN+Leaky relu  ,每个残差模块之后又要加上一个zero padding    
+* 预测对象类别时不使用softmax，改成使用logistic的输出进行预测。这样能够支持多标签对象（比如一个人有Woman 和 Person两个标签）    
+* FPN检测方法  
+* ssd从依据多个feature map来做预测,但是底层的layer并没有选中做object detetion.底层的具有high resolution,但是不具备高级语义high semantic.ssd为了提高速度,在predict的时候不用比较底层的feature map.这一点也导致了它对小目标的检测效果不好.    
+* FPN本身并不是object detetcor.它只是一个feature detetor.    
+* FPN with RPN，FPN with Fast R-CNN or Faster R-CNN通过FPN,生成了feature map的金字塔(也就是一堆不同尺寸的特征图,都具有高级语义).然后用RPN生成ROI.然后对不同尺寸的目标,选用不同尺寸的特征图去做识别.小目标要用大尺寸的feature map. 大目标用小尺寸的feature map.  
