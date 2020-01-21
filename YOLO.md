@@ -2,33 +2,32 @@
 YOLOv1 to YOLOv3 structures and evolution  
 ---
 # YOLOV1
+![YOLOv1](img/YOLOv1_net.gif)  
+## 原理
+输入一张图片，要求输出  
+* 其中所包含的对象  
+* 以及每个对象的位置（包含该对象的矩形框)  
+RCNN系列是两阶段处理模式(先提出候选区，再识别候选区中的对象，还要对候选区进行微调，使之更接近真实的bounding box，最后这个步骤过程就是边框回归);   
+Faster RCNN等一些算法采用每个grid中手工设置n个Anchor（先验框，预先设置好位置的bounding box）的设计，每个Anchor有不同的大小和宽高比。YOLO的bounding box看起来很像一个grid中2个Anchor，但它们不是。YOLO并没有预先设置2个bounding box的大小和形状，也没有对每个bounding box分别输出一个对象的预测。它的意思仅仅是对一个对象预测出2个bounding box，选择预测得相对比较准的那个。  
+这里采用2个bounding box，有点不完全算监督算法，而是像进化算法。如果是监督算法，我们需要事先根据样本就能给出一个正确的bounding box作为回归的目标。但YOLO的2个bounding box事先并不知道会在什么位置，只有经过前向计算，网络会输出2个bounding box，这两个bounding box与样本中对象实际的bounding box计算IOU。这时才能确定，IOU值大的那个bounding box，作为负责预测该对象的bounding box。  
+训练开始阶段，网络预测的bounding box都是随机的，但总是选择IOU相对好一些的那个，随着训练的进行，每个bounding box会逐渐擅长对某些情况的预测（可能是对象大小、宽高比、不同类型的对象等）。所以，这是一种进化或者非监督学习的思想。  
+YOLO将Faster RCNN的两个阶段合二为一，使用预测区来代替候选区，将图片划分为 7*7=49 个网格（grid），每个网格允许预测出2个边框（bounding box，包含某个对象的矩形框），总共 49*2=98 个bounding box候选区，它们很粗略的覆盖了图片的整个区域。YOLO的结构非常简单，就是单纯的卷积、池化最后加了两层全连接。和普通的CNN对象分类网络最大的差异是最后输出层用线性函数做激活函数，因为需要预测bounding box的位置（数值型），而不仅仅是对象的概率。YOLO的整个结构就是输入图片经过神经网络的变换得到一个输出的张量。  
+![input](img/yolov1_input.gif) ![IO](img/yolov1_io.gif) ![output](img/yolov1_output.gif)  
+输入样本->输入输出的对应关系->最后的输出信息，每个网格对应的30维向量  
+* YOLOv1支持识别20种不同的对象  
+* 每个bounding box需要4个数值来表示其位置，(Center_x,Center_y,width,height)，即(bounding box的中心点的x坐标，y坐标，bounding box的宽度，高度)，2个bounding box共需要8个数值来表示其位置  
+* bounding box的置信度 = (该bounding box内存在对象的概率 * 该bounding box与该对象实际bounding box的IOU)；意味着它 是否包含对象且位置准确的程度  
+* IOU是在训练阶段计算出的  
+* 具体就是计算出该Object的bounding box的中心位置，这个中心位置落在哪个grid，该grid对应的输出向量中该对象的类别概率是1（该gird负责预测该对象），所有其它grid对该Object的预测概率设为0（不负责预测该对象）  
+每个30维向量中只有一组（20个）对象分类的概率，也就只能预测出一个对象。所以输出的 7*7=49个 30维向量，最多表示出49个对象。每个30维向量中有2组bounding box，所以总共是98个候选区。  
 
-原理
-输入一张图片，要求输出
-1)	其中所包含的对象
-2)	以及每个对象的位置（包含该对象的矩形框）。
-RCNN系列是两阶段处理模式(先提出候选区，再识别候选区中的对象，还要对候选区进行微调，使之更接近真实的bounding box，最后这个步骤过程就是边框回归); 
-Faster RCNN等一些算法采用每个grid中手工设置n个Anchor（先验框，预先设置好位置的bounding box）的设计，每个Anchor有不同的大小和宽高比。YOLO的bounding box看起来很像一个grid中2个Anchor，但它们不是。YOLO并没有预先设置2个bounding box的大小和形状，也没有对每个bounding box分别输出一个对象的预测。它的意思仅仅是对一个对象预测出2个bounding box，选择预测得相对比较准的那个。
-这里采用2个bounding box，有点不完全算监督算法，而是像进化算法。如果是监督算法，我们需要事先根据样本就能给出一个正确的bounding box作为回归的目标。但YOLO的2个bounding box事先并不知道会在什么位置，只有经过前向计算，网络会输出2个bounding box，这两个bounding box与样本中对象实际的bounding box计算IOU。这时才能确定，IOU值大的那个bounding box，作为负责预测该对象的bounding box。
-训练开始阶段，网络预测的bounding box都是随机的，但总是选择IOU相对好一些的那个，随着训练的进行，每个bounding box会逐渐擅长对某些情况的预测（可能是对象大小、宽高比、不同类型的对象等）。所以，这是一种进化或者非监督学习的思想。
-YOLO将Faster RCNN的两个阶段合二为一，使用预测区来代替候选区，将图片划分为 7*7=49 个网格（grid），每个网格允许预测出2个边框（bounding box，包含某个对象的矩形框），总共 49*2=98 个bounding box候选区，它们很粗略的覆盖了图片的整个区域。YOLO的结构非常简单，就是单纯的卷积、池化最后加了两层全连接。和普通的CNN对象分类网络最大的差异是最后输出层用线性函数做激活函数，因为需要预测bounding box的位置（数值型），而不仅仅是对象的概率。YOLO的整个结构就是输入图片经过神经网络的变换得到一个输出的张量。
-
-       
-输入样本输入输出的对应关系最后的输出信息，每个网格对应的30维向量
-
-	YOLOv1支持识别20种不同的对象
-	每个bounding box需要4个数值来表示其位置，(Center_x,Center_y,width,height)，即(bounding box的中心点的x坐标，y坐标，bounding box的宽度，高度)，2个bounding box共需要8个数值来表示其位置
-	bounding box的置信度 = (该bounding box内存在对象的概率 * 该bounding box与该对象实际bounding box的IOU)；意味着它 是否包含对象且位置准确的程度
-	IOU是在训练阶段计算出的
-	具体就是计算出该Object的bounding box的中心位置，这个中心位置落在哪个grid，该grid对应的输出向量中该对象的类别概率是1（该gird负责预测该对象），所有其它grid对该Object的预测概率设为0（不负责预测该对象）
-每个30维向量中只有一组（20个）对象分类的概率，也就只能预测出一个对象。所以输出的 7*7=49个 30维向量，最多表示出49个对象。每个30维向量中有2组bounding box，所以总共是98个候选区。
-方法
-1)	对于输入图像中的每个对象bouding box, 先找到其中心点和中心点所在的网格，这个网格对应的30维向量中，计算出某一物体的概率是1，则其它对象的概率是0。这就是所谓的"中心点所在的网格对预测该对象负责"。
-2)	训练样本的bounding box位置应该填写对象实际的bounding box(根据网络输出的bounding box与对象实际bounding box的IOU来选择)，要在训练过程中动态决定到底填哪一个bounding box
-3)	对于2个bounding box的置信度
-conf = Pr(obj)* $ IOU ^{truth pred}$
-IOU计算方法, IOU大的bounding box其Pr(obj)=1来负责预测某个对象是否存在,就是这个bounding box的conf=$ IOU ^{truth pred}$
- 
+## 方法
+* 对于输入图像中的每个对象bouding box, 先找到其中心点和中心点所在的网格，这个网格对应的30维向量中，计算出某一物体的概率是1，则其它对象的概率是0。这就是所谓的"中心点所在的网格对预测该对象负责"。  
+* 训练样本的bounding box位置应该填写对象实际的bounding box(根据网络输出的bounding box与对象实际bounding box的IOU来选择)，要在训练过程中动态决定到底填哪一个bounding box  
+对于2个bounding box的置信度  
+* conf = Pr(obj)* $ IOU ^{truth pred}$  
+* IOU计算方法, IOU大的bounding box其Pr(obj)=1来负责预测某个对象是否存在,就是这个bounding box的conf=$ IOU ^{truth pred}$
+![Bounding Box](img/bbox.GIF)
 在训练过程中等网络输出以后，比较两个bounding box与某个物体实际位置的IOU，物体的位置（实际bounding box）放置在IOU比较大的那个bounding box（图中假设是bounding box1），且该bounding box的置信度设为1。
 4)	损失函数：损失是网络实际输出值与样本标签值之间的偏差
    
