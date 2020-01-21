@@ -1,11 +1,10 @@
 Mathematics theory and tools for YOLO framework  
 ---
-<img src="http://latex.codecogs.com/gif.latex?\frac{\partial J}{\partial \theta_k^{(j)}}=\sum_{i:r(i,j)=1}{\big((\theta^{(j)})^Tx^{(i)}-y^{(i,j)}\big)x_k^{(i)}}+\lambda \theta_k^{(j)}" />
+<img src="http://latex.codecogs.com/gif.latex?\frac{\partial J}{\partial \theta_k^{(j)}}=\sum_{i:r(i,j)=1}{\big((\theta^{(j)})^Tx^{(i)}-y^{(i,j)}\big)x_k^{(i)}}+\lambda \theta_k^{(j)}" />  
+![](http://latex.codecogs.com/gif.latex?\\frac{1}{1+sin(x)})
 
-作者：知乎用户
-链接：https://www.zhihu.com/question/26887527/answer/43166739
-来源：知乎
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+
 # BOUNDING BOX
 p 可能性，（bx, by, bh, bw）边框位置，（c1, c2, c3）目标分类;
 [p, bx, by, bh, bw, c1, c2, c3]
