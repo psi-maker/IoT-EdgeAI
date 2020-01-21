@@ -1,4 +1,4 @@
-# IoT EdgeAI
+# Folder Intel EdgeAI
 ## D1: Reviewd the Part2-Lesson 1, and make the detailed plan for 30 days intensive training content as below.
 (1) Day1 – Day5: Review all content of this course, focus on industry scenario; OpenVINO structure, modules & workflow; course coding review; especially the ‘MQTT’
 (2) Day6 – Day 10: Deploy one openVINO project 
