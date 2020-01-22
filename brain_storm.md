@@ -22,6 +22,24 @@ Garbage sorting and separation system is simple to compare with other system, bu
 4. Maybe simple process facility can be integrated with the faciliy such as paper smash, liquid drying, or food smash, etc. This will simplify following transportation and process system cost.  
 
 # AI Education
+People have strong memories with picture and shape rather than sentence and words per the biological theory.  
+One edge AI equipment with screen or AR/VR can recognize people talk with NLP, gathers related picture or cubic information from central servers, and make it visible will reinforce the learning curve or human communication.  
+  
+The most important part for AI education is the stereoscopic technology, NLP, vision or others consist with human brain running way.  
+
+# Smart Cooking
+# Sensors
+TellSpec equipment is a good reference for food ingredient detection, which use spectrometer scan to identify anaphylactogen,chemical substances, nutrient content and quantity of heat  https://tellspec.com/tw/
+
+# Structure and Application
+* Include the sensor to examine ingredients, the system also suggest the options of recipes on food materials by screen.   
+* The best way for this system is to integrate with a health system, by that the system can suggest optimized food, recipes against everyone's physical body condition.  
+* Even more, the system can control other kitchen equipment, such as the microwave timing, cooking timing etc.  
+
+# AI Health
+
+
+
 
 
   
