@@ -18,6 +18,11 @@ I think the important point for smart traffic system is the simulation backbone 
 Garbage sorting and separation system is simple to compare with other system, but the facility is a big problem. Following options are possible implementation for public facilities:  
 1. pre-construction of garbage system underground when building a house  
 2. A facility with vertical space rather than landscape orientation outdoor  
+3. A manipulator on the facility can easily seperate different objects  
+4. Maybe simple process facility can be integrated with the faciliy such as paper smash, liquid drying, or food smash, etc. This will simplify following transportation and process system cost.  
+
+# AI Education
+
 
   
 
