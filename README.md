@@ -43,5 +43,5 @@ This document is the conclusion for Intel OpenVINO pretrained models, OpenVINO O
 + Related mathematics theory for YOLO framework math.md
 + YOLOv1 to YOLOv3 structures and evolution YOLO.md
 
-
+## D8：22, Jan. 2020 Structured design and possible solutions for AI-traffic, education, cooking, ninght vision for future products’ vision. https://github.com/psi-maker/IoT-EdgeAI/blob/master/brain_storm.md
 
