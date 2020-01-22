@@ -12,5 +12,10 @@ To avoid communication jam between equipments and useless data, sensors should b
   
 Traffic is too different to use only DL, DL is the basic AI analysis such as: object category, road scenario etc. RL with evolution mechanism need be used for complex situation such as abnormal situation,possible accident prerequisite,the main purpose should be forcast near future and alert rather than only find accident.  
   
+I think the important point for smart traffic system is the simulation backbone system, which is used for AR/VR/node.js future simulation per matrix world calculation, real world physical law, and weather condition, as well as integrate the edge devices' result, then feedback to edge devices and alert possible accident objects.  
+  
+# GARBAGE SORTING AND SEPARATION
+
+  
 
 
