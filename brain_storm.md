@@ -15,6 +15,9 @@ Traffic is too different to use only DL, DL is the basic AI analysis such as: ob
 I think the important point for smart traffic system is the simulation backbone system, which is used for AR/VR/node.js future simulation per matrix world calculation, real world physical law, and weather condition, as well as integrate the edge devices' result, then feedback to edge devices and alert possible accident objects.  
   
 # GARBAGE SORTING AND SEPARATION
+Garbage sorting and separation system is simple to compare with other system, but the facility is a big problem. Following options are possible implementation for public facilities:  
+1. pre-construction of garbage system underground when building a house  
+2. A facility with vertical space rather than landscape orientation outdoor  
 
   
 
