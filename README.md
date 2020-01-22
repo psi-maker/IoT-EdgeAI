@@ -27,21 +27,21 @@ Items for user requirement:
 - balance accuracy, power, speed, size, cost
 - Model fuse technology
 ## D4: 18, Jan. 2020 Coding library conclusion from couse; improve MQTT knowledge; 
-- create a github repository for knowledge sharing ‘https://github.com/psi-maker/IoT-EdgeAI’
+- create a github repository for knowledge sharing 
 -- DevOps.md introduces the development, coding tools, coding libraries for Intel OpenVINO EdgeAI
 -- IoTcomm.md shows the information for IoT communication and protocol
 
 ## D5: 19, Jan. 2020 Find a projects to deploy from D6-D10
-+ ‘https://github.com/psi-maker/IoT-EdgeAI/blob/master/Intel%20EdgeAI/models.md’: conclusion for Intel OpenVINO pretrained models, OpenVINO Open Model Zoo repository, and Intel IoT project reference webpage.
++ ‘Intel EdgeAI/models.md’: conclusion for Intel OpenVINO pretrained models, OpenVINO Open Model Zoo repository, and Intel IoT project reference webpage.
 + Decided to deploy the AI city project https://github.com/incluit/OpenVino-For-SmartCity in my laptop.
 This document is the conclusion for Intel OpenVINO pretrained models, OpenVINO Open Model Zoo repository, and Intel IoT project reference webpage.  
 
 ## D6 20, Jan. 2020 
-+ Conclude the structure, hardware, software, theory and optimization /Intel%20EdgeAI/projects/smart_city.md
++ Conclude the structure, hardware, software, theory and optimization /Intel EdgeAI/projects/smart_city.md
 
 ## D7 21, Jan. 2020 Basic mathematics for DL, and YOLO analysis 
 + Related mathematics theory for YOLO framework math.md
 + YOLOv1 to YOLOv3 structures and evolution YOLO.md
 
-## D8：22, Jan. 2020 Structured design and possible solutions for AI-traffic, education, cooking, ninght vision for future products’ vision. https://github.com/psi-maker/IoT-EdgeAI/blob/master/brain_storm.md
+## D8：22, Jan. 2020 Structured design and possible solutions for AI-traffic, education, cooking, ninght vision for future products’ vision. brain_storm.md
 
