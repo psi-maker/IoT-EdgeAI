@@ -63,6 +63,13 @@ I conclude some basic method for healthcare in this document. Healthcare and med
 * Ultrasonic Sight is an electronic device for mobility, sociality and welfare of blind and visually impaired people  
 * two small camera IR enabled be installed both side of the glasses, with the edge chip process vision image can give a new vision to blinded people，used for army night vision, or extend human vision capabilities
 
-  
+## Userful website for healthcare
+* www.auntminnie.com  
+* Better eye health: www.peekvision.org  
+* www.nhs.uk  
+* digital health: www.dhealth.co.uk www.healthit.gov www.cms.gov connectopensource.atlassian.net apps.smarthealthit.org sharps-ds2.atlassian.net hl7.org/fhir   
+* 3D printing tech. for healthcare: 3dheals.com enablingthefuture.org
+* www.osirix-viewer.com  
+* www.slicer.org open source software platform for medical image informatics, image processing, and three-dimensional visualization
 
 
