@@ -1,21 +1,21 @@
 # KEY IOT SKILLS
 > Strong project management (to define a project's scope and needs) and engineering skills    
 
-> Data science  
+> **Data science**  
 >> Data analytics, data quality validation  
 >> Cybersecurity skills  
 >> AI, machine learning and robotics  
 
-> Architect  
+> **Architect**  
 >> * cloud-based infrastructure & big data technology  
 >> * knowledge of SCADA (Supervisory Control and Data Acquisition), instrumentation and controls engineering  
 >> * protocols, machine-to-machine communications and networking technologies; data flow structure in an IoT network    
 
-> Electronic  
+> **Electronic**  
 >> * sensor data fusion  
 >> * Electric engineering & automation technologies  
 
-> Software engineering  
+> **Software engineering**  
 >> * UI/UX, mobile development  
 >> * C, C++, Java, JavaScript and Python as the most common languages used  
 
